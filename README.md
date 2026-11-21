@@ -139,6 +139,16 @@ Suitable hosts: Railway, Render, Fly.io, AWS App Runner / ECS, Google Cloud Run.
 
 Open `http://127.0.0.1:8080` and sign in with the bootstrap administrator credentials from `.env`.
 
+## Google Colab (code notebook — no web UI)
+
+Use `QIP_Material_Intelligence_Colab.ipynb`:
+
+1. Upload the notebook to [Google Colab](https://colab.research.google.com/) **or** open it from the GitHub repo.
+2. Run the install/clone cell.
+3. Upload a photo (or ZIP) and get **Material · Condition · Recommendation** printed in the notebook.
+
+API used by the notebook: `material_intelligence.app.ml.colab_scan` (`scan_path`, `scan_folder`).
+
 Health checks:
 
 - `GET /api/health`
