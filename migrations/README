@@ -1,0 +1,10 @@
+Alembic migrations live here for production PostgreSQL deployments.
+
+For local SQLite development, `bootstrap_application()` calls SQLAlchemy `create_all`.
+
+To initialize Alembic against PostgreSQL:
+
+```bash
+alembic revision --autogenerate -m "initial"
+alembic upgrade head
+```
