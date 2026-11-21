@@ -124,6 +124,19 @@ uvicorn app:app --host 0.0.0.0 --port 8080
 
 Entrypoints: `app.py`, `main.py`, and `material_intelligence.app.asgi:app`.
 
+### Deploy note (important)
+
+**Do not deploy this app as an AWS Lambda zip.** PyTorch alone is ~500 MB+, so the bundle exceeds Lambda’s **500 MB** limit (your error: `LAMBDA_SIZE_EXCEEDED`).
+
+Use a **container** instead:
+
+```bash
+docker build -t material-intelligence .
+docker run --env-file .env -p 8080:8080 material-intelligence
+```
+
+Suitable hosts: Railway, Render, Fly.io, AWS App Runner / ECS, Google Cloud Run.
+
 Open `http://127.0.0.1:8080` and sign in with the bootstrap administrator credentials from `.env`.
 
 Health checks:

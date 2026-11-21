@@ -1,0 +1,23 @@
+﻿# Keep Cursor / Lambda-style bundles small
+.venv/
+venv/
+__pycache__/
+.git/
+data/
+*.db
+*.pt
+*.pth
+*.onnx
+*.hdf5
+*.h5
+runs/
+wandb/
+.pytest_cache/
+.nicegui/
+train.csv
+test.csv
+defect_and_no_defect.csv
+Manufacturing_default_detection.ipynb
+weights_seg.hdf5
+yolov8n.pt
+node_modules/

@@ -11,6 +11,8 @@ data/
 *.pt
 *.pth
 *.onnx
+*.hdf5
+*.h5
 runs/
 wandb/
 ultralytics/
@@ -25,3 +27,9 @@ build/
 .nicegui/
 *.log
 node_modules/
+train.csv
+test.csv
+defect_and_no_defect.csv
+weights_seg.hdf5
+yolov8n.pt
+Manufacturing_default_detection.ipynb
