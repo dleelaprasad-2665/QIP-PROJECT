@@ -104,6 +104,8 @@ Toggle **Include demo data** on the Overview dashboard to hide them from KPIs an
 
 ## Start the application
 
+Local NiceGUI server:
+
 ```bash
 python -m material_intelligence.app.main
 ```
@@ -113,6 +115,14 @@ Or:
 ```bash
 material-intelligence
 ```
+
+FastAPI / ASGI hosts (expects `app:app`):
+
+```bash
+uvicorn app:app --host 0.0.0.0 --port 8080
+```
+
+Entrypoints: `app.py`, `main.py`, and `material_intelligence.app.asgi:app`.
 
 Open `http://127.0.0.1:8080` and sign in with the bootstrap administrator credentials from `.env`.
 

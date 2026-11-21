@@ -63,7 +63,7 @@ def _register_health_routes() -> None:
 
 
 def run() -> None:
-    """Console script entrypoint."""
+    """Local NiceGUI server entrypoint (`python -m material_intelligence.app.main`)."""
     setup_logging()
     settings = get_settings()
     bootstrap_application()
@@ -84,6 +84,15 @@ def run() -> None:
         dark=True,
         show=False,
     )
+
+
+# FastAPI ASGI symbol for hosts that import material_intelligence.app.main:app
+def __getattr__(name: str):
+    if name == "app":
+        from material_intelligence.app.asgi import app as asgi_app
+
+        return asgi_app
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
 
 
 if __name__ in {"__main__", "__mp_main__"}:
